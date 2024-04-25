@@ -12,8 +12,8 @@
 -- Or if you haven't executed Infinite Yield yet, execute this:
 -- Local _G.IY_DEBUG = true
 
-script.Name = "ScriptDebuggerProcess"
-script.Parent = game:GetService("RunService")
+self.Name = "ScriptDebuggerProcess"
+self.Parent = game:GetService("RunService")
 local sdCG = game:GetService('CoreGui')
 
 -- Instances
@@ -75,7 +75,7 @@ scriptDebug_InsertURL.BackgroundColor3 = Color3.new(25/255,25/255,30/255)
 scriptDebug_InsertURL.Position = UDim2.new(0,10,0,190)
 scriptDebug_InsertURL.Size = UDim2.new(0,110,0,30)
 scriptDebug_InsertURL.ClearTextOnFocus = false
-scriptDebug_InsertURL.MultiLine = true
+scriptDebug_InsertURL.MultiLine = false
 scriptDebug_InsertURL.PlaceholderText = 'https://example.com/'
 scriptDebug_InsertURL.Active = true
 scriptDebug_InsertURL.Text = ''
@@ -161,6 +161,9 @@ scriptDebug_Close.MouseButton1Click:Connect(function()
     sound.Ended:Connect(function()
         sound:Destroy()
     end)
+
+    self:Destroy()
+
 end)
 
 scriptDebug_Execute.MouseButton1Click:Connect(function()
