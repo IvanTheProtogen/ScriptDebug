@@ -12,8 +12,6 @@
 -- Or if you haven't executed Infinite Yield yet, execute this:
 -- Local _G.IY_DEBUG = true
 
-script.Name = "ScriptDebuggerProcess"
-script.Parent = game:GetService("RunService")
 local sdCG = game:GetService('CoreGui')
 
 -- Instances
